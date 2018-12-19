@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+
+{% block page_title %}
+<title>All Albums</title>
+{% endblock %}
+
+{% block content %}
+<h2 class='section-title'>Albums</h2>
+<div class='section-container'>
+    {% for album in albums %}
+    <a href="/album/{{album['@attr']['rank']}}">
+        <div class='item'>
+            <img src='{{album["image"][-1]["#text"]}}' class='item-img' />
+            <h5 class='item-title'>{{album["name"]}}</h5>
+            <h5 class='item-title'>{{album["artist"]["name"]}}</h5>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

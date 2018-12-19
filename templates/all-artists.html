@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+
+{% block page_title %}
+<title>All Artists</title>
+{% endblock %}
+
+{% block content %}
+<h2 class='section-title'>Artists</h2>
+<div class='section-container'>
+    {% for artist in artists %}
+    <a href="/artist/{{artist['@attr']['rank']}}">
+        <div class='item'>
+            <img src='{{artist["image"][-1]["#text"]}}' class='item-img' />
+            <h5 class='item-title'>{{artist["name"]}}</h5>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

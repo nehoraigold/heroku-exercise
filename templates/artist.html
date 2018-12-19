@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+
+{% block page_title %}
+<title>{{artist["name"]}}</title>
+{% endblock %}
+
+{% block content %}
+    <img src='{{artist["image"][-1]["#text"]}}' class='item-img-large' />
+    <h3 class='item-title'>{{artist["name"]}}</h3>
+    <p>{{artist["bio"]["summary"]}}</p>
+{% endblock %}

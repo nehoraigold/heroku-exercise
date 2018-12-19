@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {% block page_title %} {% endblock %}
+
+        <link rel='stylesheet' type='text/css' href='./css/style.css'>
+
+        <!--JQUERY-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script defer src='./js/logic.js'></script>
+    </head>
+
+    <body>
+        <div id='app'>
+            <nav class="side-menu">
+                <ul>
+                    <li><a href='/'>Home</a></li>
+                </ul>
+                <h3>Music</h3>
+                <ul>
+                    <li><a href='/all-songs'>Songs</a></li>
+                    <li><a href='/all-albums'>Albums</a></li>
+                    <li><a href='/all-artists'>Artists</a></li>
+                </ul>
+            </nav>
+            <section class='content'>
+                {% block content %} {% endblock %}
+            </section>
+        </div>
+    </body>
+
+</html>

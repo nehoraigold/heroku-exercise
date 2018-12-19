@@ -1,0 +1,16 @@
+{% extends "template.html" %}
+
+{% block page_title %}
+<title>{{album["name"]}}</title>
+{% endblock %}
+
+{% block content %}
+    <img src='{{album["image"][-1]["#text"]}}' class='item-img-large' />
+    <h3 class='item-title'>{{album["name"]}}</h3>
+    <h3 class='item-title'>{{album["artist"]}}</h3>
+    <ol>
+        {% for song in album["tracks"]["track"] %}
+            <li>{{song["name"]}}</li>
+        {% endfor %}
+    <ol>
+{% endblock %}
